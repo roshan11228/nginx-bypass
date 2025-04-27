@@ -1,0 +1,17 @@
+name: Free VPS
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Free VPS
+        run: |
+          echo "Welcome to Free VPS!"
+          uname -a
+          sudo apt update -y
+          sudo apt install nginx -y
+          sudo systemctl start nginx
+          curl http://localhost
+          sleep 21600 # VPS chalega 6 ghante (21600 seconds)
